@@ -1,0 +1,23 @@
+<div>
+  <h1>DeportesV2</h1>
+  <ul>
+    @for(deporte of deportes ; track deportes){ @if(deporte=="Futbol"){
+    <li style="color: aqua">{{ deporte }}</li>
+    }@else{
+    <li>
+      {{ deporte }}
+    </li>
+    } }
+  </ul>
+  @for(num of numeros ; track numeros){ @if(num%2==0){
+  <li class="par">
+    {{ num }}
+  </li>
+  } @else{
+  <li class="impar">
+    {{ num }}
+  </li>
+  } } @empty{
+  <li>Sin elementos</li>
+  }
+</div>

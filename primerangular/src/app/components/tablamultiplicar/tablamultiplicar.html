@@ -1,0 +1,25 @@
+<div>
+  <form #tablaform="ngForm">
+    <label for="">Dame un Numero</label>
+    <input type="text" name="cajanumero" #cajanumero="ngModel" [(ngModel)]="numero" />
+  </form>
+  <button (click)="generarTabla()">Genarar tabla por primera vez</button>
+  @if(state){
+  <table>
+    <thead>
+      <tr>
+        <th>Oprecion</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(let num of 10){
+      <tr>
+        <td>{{ numero }} x {{ num }}</td>
+        <td>{{ numero * num }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>

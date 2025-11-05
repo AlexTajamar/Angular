@@ -1,0 +1,12 @@
+<div>
+  <h1>Sumar Números Formularios CREATEREF()</h1>
+  <form #numerosform="ngForm">
+    <label for="">Numero 1</label>
+    <input type="number" name="cajanumero1" #cajanumero1 />
+    <br />
+    <label for="">Numero 2</label>
+    <input type="number" name="cajanumero2" #cajanumero2 />
+    <button (click)="mostrarSuma()">Mostrar suma</button>
+  </form>
+  <h2 style="color: chartreuse">la suma es : {{ suma }}</h2>
+</div>

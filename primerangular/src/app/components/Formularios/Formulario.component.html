@@ -1,0 +1,20 @@
+<div>
+  <h1>Formulario</h1>
+  <form (ngSubmit)="recibirDatos()" #userForm="ngForm">
+    <label>Nombre</label>
+    <input type="text" name="cajanombre" #cajanombre="ngModel" [(ngModel)]="user.nombre" />
+    <br />
+    <label>Apellido</label>
+    <input type="text" name="cajaapellido" #cajaapellido="ngModel" [(ngModel)]="user.apellido" />
+    <br />
+    <label>edad</label>
+    <input type="text" name="cajaedad" #cajaedad="ngModel" [(ngModel)]="user.edad" />
+  </form>
+  <h2 style="color: chocolate">
+    Nombre {{ user.nombre }}
+    <br />
+    Apellido {{ user.apellido }}
+    <br />
+    Edad {{ user.edad }}
+  </h2>
+</div>
