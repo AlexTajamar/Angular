@@ -7,9 +7,10 @@ import { Musica } from './components/musica/musica';
 import { Header } from './components/header/header';
 import { HomeComponent } from './components/home.component/home.component';
 import { routing, appRoutingProvider } from './app.routing';
+import { DobleNumero } from './components/doble-numero/doble-numero';
 
 @NgModule({
-  declarations: [App, Cine, Musica, Header, HomeComponent],
+  declarations: [App, Cine, Musica, Header, HomeComponent, DobleNumero],
   imports: [BrowserModule, RouterModule, routing],
   providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
   bootstrap: [App],
