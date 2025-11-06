@@ -1,0 +1,15 @@
+<div>
+  <h1>Comunicacion Modelos</h1>
+
+  @for(zap of productos; track zap){
+  <div class="card" style="width: 18rem">
+    <img [src]="zap.imagen" class="card-img-top" alt="{{ zap.nombre }}" style="width: 200px" />
+
+    <div class="card-body">
+      <h5 class="card-title">Nombre {{ zap.nombre }}</h5>
+
+      <p class="card-text">Precio {{ zap.precio }}</p>
+    </div>
+  </div>
+  }
+</div>
