@@ -15,6 +15,6 @@ export class PadreDeportes {
   }
 
   seleccionarFavorito(event: any): any {
-    console.log('Comunicando al padre');
+    console.log('Comunicando al padre' + event);
   }
 }
