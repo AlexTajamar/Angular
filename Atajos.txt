@@ -1,0 +1,48 @@
+ROUTING : 
+
+
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'cine', component: Cine },
+  { path: 'musica', component: Musica },
+  { path: 'doble/:num', component: DobleNumero },
+  { path: 'doble', component: DobleNumero },
+];
+
+export const appRoutingProvider: any[] = [];
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);
+
+
+
+ACTIVATE ROUTE :
+
+<button (click)="goToHome()">Al Home</button>
+<button (click)="redirect(55)">Al doble 55</button>
+
+
+import { ActivatedRoute, Params ,Router } from '@angular/router';
+
+
+   ngOnInit(): void {
+    this._activateRoute.params.subscribe((parametros: Params) => {
+      if (parametros['num'] != null) {
+        this.num = parseInt(parametros['num']);
+        this.doble = this.num * 2;
+      }
+    });
+  }
+  constructor(private _activateRoute: ActivatedRoute, private _router: Router) {
+    this.doble = 0;
+  }
+
+  goToHome(): void {
+    this._router.navigate(['/']);}
+
+redirect(numero: number): void {
+this._router.navigate(['/doble', numero]);
+  }
+
+
+
+

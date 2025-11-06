@@ -1,0 +1,21 @@
+<app-menu-tabla>></app-menu-tabla>
+@if(num!=0){
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td>Operacion</td>
+        <td>Resultado</td>
+      </tr>
+    </thead>
+    <tbody>
+      @for(numero of numeros; track numero){
+      <tr>
+        <td>{{ num }} x {{ numero }}</td>
+        <td>{{ num * numero }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+}

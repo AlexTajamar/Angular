@@ -1,0 +1,65 @@
+/* Contenedor principal para centrar la tabla y dar espacio */
+.table-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Estilos de la tabla */
+table {
+  width: 100%;
+  max-width: 500px; /* Ancho máximo de la tabla */
+  border-collapse: collapse; /* Bordes limpios y unidos */
+  margin: 0 auto;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 8px; /* Esquinas redondeadas */
+  overflow: hidden; /* Asegura que el apecto redondeado se aplique al a cabecera */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilos de la cabecera de la tabla (thead) */
+thead tr {
+  background-color: #007bff; /* Un color de acento azul */
+  color: #ffffff; /* Texto blanco */
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Celdas de cabecera (td en a) y celdas de datos (td en tbody) */
+table th,
+table td {
+  padding: 12px 15px; /* Espaciado interno */
+}
+
+/* Estilos del cuerpo de la tabla (tbody) */
+tbody tr {
+  border-bottom: 1px solid #dddddd; /* Línea separadora sutil */
+}
+
+/* Filas pares con un fondo ligeramente diferente (efecto cebra) */
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+/* Efecto hover en las filas del cuerpo */
+tbody tr:hover {
+  background-color: #e2e2e2; /* Color al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Última fila sin borde inferior */
+tbody tr:last-of-type {
+  border-bottom: 2px solid #007bff; /* Borde inferior más grueso y de color */
+}
+
+/* Alineación de la celda de resultado (opcional, si quieres centrar los números) */
+tbody td:last-child {
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody td:first-child {
+  text-align: center;
+}

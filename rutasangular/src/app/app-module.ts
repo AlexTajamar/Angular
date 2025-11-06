@@ -8,9 +8,20 @@ import { Header } from './components/header/header';
 import { HomeComponent } from './components/home.component/home.component';
 import { routing, appRoutingProvider } from './app.routing';
 import { DobleNumero } from './components/doble-numero/doble-numero';
+import { MenuTabla } from './components/menu-tabla/menu-tabla';
+import { TablaMultiplicar } from './components/tabla-multiplicar/tabla-multiplicar';
 
 @NgModule({
-  declarations: [App, Cine, Musica, Header, HomeComponent, DobleNumero],
+  declarations: [
+    App,
+    Cine,
+    Musica,
+    Header,
+    HomeComponent,
+    DobleNumero,
+    MenuTabla,
+    TablaMultiplicar,
+  ],
   imports: [BrowserModule, RouterModule, routing],
   providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
   bootstrap: [App],
