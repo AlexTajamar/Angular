@@ -44,5 +44,34 @@ this._router.navigate(['/doble', numero]);
   }
 
 
+INPUTS Y PROPS Y OUTPUTS : 
+
+  @Input() car!: Coche;
+  <app-hijo-coche [car]="coche"></app-hijo-coche>
 
 
+
+    @Input() sport!: string;
+    @Output() seleccionarFavoritoPadre: EventEmitter<any> = new EventEmitter();
+       <app-hijo-deporte [sport]="deporte"
+      (seleccionarFavoritoPadre)="seleccionarFavoritoPadre($event)"></app-hijo-deporte>
+
+DELETE :
+  <app-comic
+    (seleccionarFavorito)="seleccionarFavorito($event)"
+    [comic]="comic"
+    [index]="i"
+    (deleteComic)="deleteComic($event)"
+  ></app-comic>
+
+ deleteCommic(index: number): void {
+    this.comics.splice(index, 1);
+  }
+
+
+
+  @Output() deleteComic: EventEmitter<any> = new EventEmitter<any>();
+  @Input() index!: number;
+  eliminarComic() {
+    this.deleteComic.emit(this.index);
+  }

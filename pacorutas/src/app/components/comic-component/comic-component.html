@@ -1,0 +1,7 @@
+<div>
+  <h1>Comic : {{ comic.titulo }}</h1>
+  <img style="width: 200px; heigth: 200px" [src]="comic.imagen" />
+  <h3>Comic : {{ comic.descripcion }}</h3>
+  <button (click)="marcarFavorito()">Selecciona Favorito</button>
+  <button (click)="eliminarComic()">Eliminar</button>
+</div>
