@@ -1,18 +1,29 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Comic } from '../../models/comic';
+import { ServicesComics } from '../../services/service.comics';
 
 @Component({
   selector: 'app-libreria',
   standalone: false,
   templateUrl: './libreria-component.html',
   styleUrl: './libreria-component.css',
+  providers: [ServicesComics],
 })
-export class LibreriaComponent {
+export class LibreriaComponent implements OnInit {
   public comics: Array<Comic>;
   public comicFavorito!: Comic;
   @ViewChild('cajanombre') cajaNombre!: ElementRef;
   @ViewChild('cajaimagen') cajaImagen!: ElementRef;
   @ViewChild('cajades') cajaDes!: ElementRef;
+
+  ngOnInit(): void {
+    let service = new ServicesComics();
+    let comic2 = service.getComic();
+
+    for (let index = 0; index < comic2.length; index++) {
+      this.comics.push(comic2[index]);
+    }
+  }
 
   createComic(): void {
     let titulo = this.cajaNombre.nativeElement.value;
@@ -23,7 +34,7 @@ export class LibreriaComponent {
     this.comics.push(comicNew);
   }
 
-  constructor() {
+  constructor(private _service: ServicesComics) {
     this.comics = [
       {
         titulo: 'Spiderman',
