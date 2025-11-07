@@ -11,6 +11,15 @@ export class ServicioPersonas {
     let request = 'api/personas';
     return this._httpClient.get(url + request);
   }
-
+  getPersonasPromise(): Promise<any> {
+    let url = 'https://servicioapipersonasmvcpgs.azurewebsites.net/';
+    let request = 'api/personas';
+    let promise = new Promise((resolve) => {
+      this._httpClient.get(url + request).subscribe((response) => {
+        resolve(response);
+      });
+    });
+    return promise;
+  }
   constructor(private _httpClient: HttpClient) {}
 }

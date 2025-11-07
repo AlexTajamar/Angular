@@ -6,10 +6,11 @@ import { App } from './app';
 import { provideHttpClient } from '@angular/common/http';
 import { PersonasapiComponent } from './components/personasapi.component/personasapi.component';
 import { ServicioPersonas } from './services/service.persona';
+import { PersonasStandaloneTrue } from './components/personas-standalone-true/personas-standalone-true';
 
 @NgModule({
   declarations: [App, PersonasapiComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, PersonasStandaloneTrue],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServicioPersonas],
   bootstrap: [App],
 })

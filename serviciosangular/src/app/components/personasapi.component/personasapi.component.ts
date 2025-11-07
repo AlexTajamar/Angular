@@ -16,5 +16,10 @@ export class PersonasapiComponent implements OnInit {
       this.personas = response;
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._services.getPersonasPromise().then((response) => {
+      console.log('Reading');
+      this.personas = response;
+    });
+  }
 }
