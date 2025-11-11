@@ -1,0 +1,57 @@
+/* Contenedor principal */
+.plantilla-container {
+  max-width: 900px;
+  margin: 20px auto; /* Centra el contenedor */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Estilo de la tabla */
+.plantilla-table {
+  width: 100%;
+  border-collapse: collapse; /* Une los bordes de las celdas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Necesario para que el border-radius afecte a las esquinas */
+}
+
+/* Estilo de los encabezados (th) */
+.plantilla-table th {
+  background-color: #007bff; /* Un azul profesional */
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Estilo de las celdas (td) */
+.plantilla-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+  color: #555;
+}
+
+/* Estilo de las filas (tr) - Bandas alternas */
+.plantilla-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Color gris claro para filas pares */
+}
+
+/* Efecto hover sobre las filas */
+.plantilla-table tbody tr:hover {
+  background-color: #f1f1f1; /* Color gris más oscuro al pasar el ratón */
+}
+
+/* Estilo para la fila vacía */
+.plantilla-table .empty-row {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  padding: 20px;
+}

@@ -1,0 +1,45 @@
+<div class="plantilla-container">
+  <h1>Plantilla de Múltiple</h1>
+  <form #formSelect="ngForm">
+    <select
+      name="selectFuncios"
+      class="form-control"
+      [(ngModel)]="funcionSeleccionada"
+      (ngModelChange)="filtrarPlantilla()"
+      multiple
+    >
+      <option value="TODOS">TODOS</option>
+
+      @for(funcion of funciones; track funcion){
+      <option value="{{ funcion }}">{{ funcion }}</option>
+      }
+    </select>
+  </form>
+
+  <table class="plantilla-table">
+    <thead>
+      <tr>
+        <th>Apellido</th>
+        <th>Función</th>
+        <th>Turno</th>
+        <th>Salario</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of plantillaFiltrada; track item.idEmpleado) {
+      <tr>
+        <td>{{ item.apellido }}</td>
+        <td>{{ item.funcion }}</td>
+        <td>{{ item.turno }}</td>
+        <td>{{ item.salario | currency : 'EUR' }}</td>
+      </tr>
+      } @empty {
+      <tr>
+        <td colspan="4" class="empty-row">
+          No hay personal para mostrar (o que coincida con el filtro).
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
