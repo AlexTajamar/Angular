@@ -7,11 +7,18 @@ import { provideHttpClient } from '@angular/common/http';
 import { PersonasapiComponent } from './components/personasapi.component/personasapi.component';
 import { ServicioPersonas } from './services/service.persona';
 import { PersonasStandaloneTrue } from './components/personas-standalone-true/personas-standalone-true';
+import { ServicioCoches } from './services/services.coches';
+import { CocheComponent } from './components/coche-component/coche-component';
 
 @NgModule({
-  declarations: [App, PersonasapiComponent],
+  declarations: [App, PersonasapiComponent, CocheComponent],
   imports: [BrowserModule, AppRoutingModule, PersonasStandaloneTrue],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServicioPersonas],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(),
+    ServicioPersonas,
+    ServicioCoches,
+  ],
   bootstrap: [App],
 })
 export class AppModule {}

@@ -6,3 +6,5 @@ export class Persona {
     public Edad: number
   ) {}
 }
+ 
+

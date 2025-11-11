@@ -1,0 +1,66 @@
+/* Contenedor principal para la cuadrícula */
+.car-grid {
+  display: grid;
+  /* Crea columnas automáticas de 280px min, 1fr max */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.car-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden; /* Para contener la imagen */
+  transition: transform 0.2s ease-in-out;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de la imagen */
+.car-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  border-bottom: 1px solid #eee;
+}
+
+/* Contenedor para la información */
+.car-info {
+  padding: 15px;
+}
+
+/* Título de la tarjeta (Marca y Modelo) */
+.car-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+/* Párrafo para el conductor */
+.car-driver {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Mensaje cuando no hay coches */
+.empty-message {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+/* Estilo para el h1 */
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
