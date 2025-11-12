@@ -1,0 +1,17 @@
+<div>
+  @for(subordinado of subordinados ; track subordinado){
+  <h1>Perfil de: {{ subordinado.apellido }}</h1>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>ID subordinado:</strong> {{ subordinado.idsubordinado }}
+    </li>
+    <li class="list-group-item"><strong>Apellido:</strong> {{ subordinado.apellido }}</li>
+    <li class="list-group-item"><strong>Oficio:</strong> {{ subordinado.oficio }}</li>
+    <li class="list-group-item">
+      <strong>Salario:</strong> {{ subordinado.salario | currency : 'EUR' : 'symbol' }}
+    </li>
+    <li class="list-group-item"><strong>Jefe (ID Director):</strong> {{ subordinado.director }}</li>
+  </ul>
+  }
+</div>

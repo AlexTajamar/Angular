@@ -1,0 +1,9 @@
+<h1>Detalles</h1>
+<a [routerLink]="['/']">Back to Home/Index</a>
+@if(departamento){
+<ul class="list-group">
+  <li>Id : {{ departamento.numero }}</li>
+  <li>Nombre : {{ departamento.nombre }}</li>
+  <li>Localidad : {{ departamento.localidad }}</li>
+</ul>
+}

@@ -1,0 +1,15 @@
+<h1>Edit</h1>
+<a [routerLink]="['/']">Back to Home/Index</a>
+@if(departamento){
+<form #edit="ngForm">
+  <label>Id : {{ departamento.numero }}</label>
+  <input type="number" name="cajaid" #cajaid value="{{ departamento.numero }}" />
+  <label>Nombre : {{ departamento.nombre }}</label>
+  <input type="text" name="cajanombre" #cajanombre value="{{ departamento.nombre }}" />
+
+  <label>Localidad : {{ departamento.localidad }}</label>
+  <input type="text" name="cajalocalidad" #cajalocalidad value="{{ departamento.localidad }}" />
+  <button (click)="updateDepartamento()">Update</button>
+</form>
+
+}
