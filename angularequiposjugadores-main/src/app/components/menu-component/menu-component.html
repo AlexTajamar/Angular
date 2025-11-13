@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-football">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./../../../assets/images/champions.png" alt="Logo Champions" style="width: 60px" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/']">🏟️ Home</a>
+        </li>
+
+        <!-- Equipos Delay -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">⏱️ Equipos Delay</a>
+          <ul class="dropdown-menu">
+            @if (equipos){
+              @for (team of equipos; track team){
+                <li>
+                  <a class="dropdown-item" [routerLink]="['/equiposdelay', team.idEquipo]">⚽ {{team.nombre}}</a>
+                </li>
+              }
+            }
+          </ul>
+        </li>
+
+        <!-- Equipos -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">⚽ Equipos</a>
+          <ul class="dropdown-menu">
+            @if (equipos){
+              @for (team of equipos; track team){
+                <li>
+                  <a class="dropdown-item" [routerLink]="['/equipos', team.idEquipo]">🔵 {{team.nombre}}</a>
+                </li>
+              }
+            }
+          </ul>
+        </li>
+
+        <!-- Botón Delay -->
+        @if (delay == true){
+          <li class="nav-item">
+            <button (click)="setDelayServices()" class="btn btn-danger-football ms-2">⛔ End Delay</button>
+          </li>
+        }@else{
+          <li class="nav-item">
+            <button (click)="setDelayServices()" class="btn btn-success-football ms-2">🟢 Start Delay</button>
+          </li>
+        }
+      </ul>
+
+      <!-- Buscador -->
+      <form #playerForm="ngForm" class="d-flex" role="search">
+        <input
+          class="form-control me-2 search-input"
+          type="search"
+          name="cajanombre"
+          #cajanombre
+          placeholder="🔍 Buscar jugador..."
+          aria-label="Search"
+        />
+        <button class="btn btn-search" (click)="buscarJugadores()">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>

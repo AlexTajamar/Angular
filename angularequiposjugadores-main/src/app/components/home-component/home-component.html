@@ -1,0 +1,58 @@
+<div class="campeones-container">
+  <!-- Balones flotantes decorativos -->
+  <div class="soccer-ball ball-1">⚽</div>
+  <div class="soccer-ball ball-2">⚽</div>
+  <div class="soccer-ball ball-3">⚽</div>
+  <div class="soccer-ball ball-4">⚽</div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="title-campeones">¡CAMPEONES!</h1>
+    <p class="subtitle-campeones">⚡ Vive la Pasión del Fútbol ⚡</p>
+
+    <!-- Imagen principal -->
+    <div class="image-container">
+      <div class="speed-lines" style="top: 30%;"></div>
+      <div class="speed-lines" style="top: 50%; animation-delay: 0.5s;"></div>
+      <div class="speed-lines" style="top: 70%; animation-delay: 1s;"></div>
+      <img src="./../../../assets/images/campeones.jpg" alt="Campeones" class="campeones-image" />
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="action-buttons">
+      <button class="anime-button btn-primary-anime" [routerLink]="['/equipos']">
+        <span>🏆 VER EQUIPOS</span>
+      </button>
+      <button class="anime-button btn-secondary-anime" [routerLink]="['/jugadores']">
+        <span>⚽ JUGADORES</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sección de estadísticas -->
+  <div class="stats-section">
+    <div class="stat-card">
+      <div class="stat-icon">🏟️</div>
+      <div class="stat-number">32</div>
+      <div class="stat-label">Equipos</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">⚽</div>
+      <div class="stat-number">847</div>
+      <div class="stat-label">Jugadores</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-number">64</div>
+      <div class="stat-label">Partidos</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-number">256</div>
+      <div class="stat-label">Goles</div>
+    </div>
+  </div>
+</div>

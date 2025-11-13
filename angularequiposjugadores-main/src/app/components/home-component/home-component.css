@@ -1,0 +1,366 @@
+  /* Contenedor principal */
+  .campeones-container {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+    overflow: hidden;
+  }
+
+  /* Animación de estrellas de fondo */
+  .campeones-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 60% 70%, white, transparent),
+      radial-gradient(1px 1px at 50% 50%, white, transparent),
+      radial-gradient(1px 1px at 80% 10%, white, transparent),
+      radial-gradient(2px 2px at 90% 60%, white, transparent),
+      radial-gradient(1px 1px at 33% 80%, white, transparent);
+    background-size: 200% 200%;
+    animation: twinkle 8s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  /* Título principal con efecto anime */
+  .title-campeones {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    text-shadow: 
+      0 0 10px #00d4ff,
+      0 0 20px #00d4ff,
+      0 0 30px #00d4ff,
+      4px 4px 0px #ff0844,
+      8px 8px 0px #ffa500;
+    animation: titlePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes titlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .subtitle-campeones {
+    font-size: 1.5rem;
+    color: #00ff88;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Contenedor de imagen con efecto */
+  .image-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    animation: floatImage 4s ease-in-out infinite;
+  }
+
+  @keyframes floatImage {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .campeones-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 
+      0 20px 60px rgba(0, 212, 255, 0.3),
+      0 0 0 8px rgba(255, 255, 255, 0.1),
+      0 0 0 16px rgba(0, 212, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 5px solid #00d4ff;
+  }
+
+  .campeones-image:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 
+      0 25px 80px rgba(0, 212, 255, 0.5),
+      0 0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+
+  /* Efecto de líneas de velocidad */
+  .speed-lines {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      #00d4ff 50%, 
+      transparent 100%);
+    animation: speedLine 2s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes speedLine {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Balones decorativos flotantes */
+  .soccer-ball {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    animation: floatBall 6s ease-in-out infinite;
+    z-index: 3;
+    opacity: 0.7;
+  }
+
+  .ball-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .ball-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+  }
+
+  .ball-3 {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: 2s;
+  }
+
+  .ball-4 {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 3s;
+  }
+
+  @keyframes floatBall {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-30px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(-60px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-30px) rotate(270deg);
+    }
+  }
+
+  /* Botones de acción estilo anime */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    z-index: 2;
+    position: relative;
+  }
+
+  .anime-button {
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .anime-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .anime-button:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .anime-button span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary-anime {
+    background: linear-gradient(135deg, #ff0844 0%, #ffa500 100%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary-anime:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 8, 68, 0.5);
+  }
+
+  .btn-secondary-anime {
+    background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    color: #1a1a2e;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-secondary-anime:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+  }
+
+  /* Sección de estadísticas rápidas */
+  .stats-section {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+    border: 3px solid #00d4ff;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  }
+
+  .stat-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: #00ff88;
+    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.4);
+  }
+
+  .stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #00ff88;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .title-campeones {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    .subtitle-campeones {
+      font-size: 1.2rem;
+    }
+
+    .action-buttons {
+      gap: 1rem;
+    }
+
+    .anime-button {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    .soccer-ball {
+      width: 35px;
+      height: 35px;
+      font-size: 35px;
+    }
+  }

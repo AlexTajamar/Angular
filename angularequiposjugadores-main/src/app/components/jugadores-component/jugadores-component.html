@@ -1,0 +1,71 @@
+<div class="container">
+    @if (jugadores) {
+        <!-- Grid de Jugadores -->
+        <div class="players-section">
+            <h1 class="section-title">⚽ PLANTILLA FIFA ⚽</h1>
+            
+            <div class="players-grid">
+                @for (player of jugadores; track player; let i = $index) {
+                    <div class="player-card">
+                        <div class="card-glow"></div>
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-pattern"></div>
+                                
+                                <!-- Badge de rareza -->
+                                <!-- <div class="rarity-badge">★ GOLD ★</div> -->
+                                <!-- Header: Rating y País -->
+                                <div class="card-header">
+                                    <!-- Rating -->
+                                    <div class="rating-box">
+                                        <div class="rating-number">
+                                            {{rating[i]}}
+                                        </div>
+                                        <div class="rating-position">{{ player.posicion }}</div>
+                                    </div>
+
+                                    <!-- País -->
+                                    <div class="country-box">
+                                        <div class="country-flag">🌍</div>
+                                        <div class="country-name">{{ player.pais }}</div>
+                                    </div>
+                                </div>
+
+                                <!-- Imagen del jugador -->
+                                <div class="player-image-container">
+                                    <img [src]="player.imagen" [alt]="player.nombre"
+                                    style="width: 200px; height: 230px;"/>
+                                </div>
+
+                                <!-- Nombre del jugador -->
+                                <div class="player-name-box">
+                                    <h3 class="player-name">{{ player.nombre }}</h3>
+                                </div>
+
+                                <!-- Estadísticas -->
+                                <div class="stats-container">
+                                    <div class="stats-grid">
+                                        <div class="stat-item">
+                                            <span class="stat-icon">📅</span>
+                                            <div class="stat-content">
+                                                <span class="stat-label">Nacimiento</span>
+                                                <span class="stat-value">{{ player.fechaNacimiento }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-icon">📍</span>
+                                            <div class="stat-content">
+                                                <span class="stat-label">País</span>
+                                                <span class="stat-value">{{ player.pais }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
